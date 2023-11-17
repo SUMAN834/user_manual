@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.pdf-manuals.com/p/pictures1/studio-dynamics-canvas-background-light-stand-mount-56lmend-4000.jpg');
+            background-size: 450%; /* Adjust as needed */
+            background-repeat: no-repeat; /* Adjust as needed */
+            background-position: center;
+        }
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar h1 {
+            text-align: center;
+        }
+        .sidebar h1 i {
+            margin-right: 10px; /* Adjust the spacing between the icon and text */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #555;
+        }
+
+        /* Modify the .content class */
+.content {
+    margin-left: 280px; /* Adjust the margin to create space for the sidebar */
+    padding: 20px;
+    max-width: calc(100% - 280px); /* Ensure the content doesn't exceed the available space */
+}
+
+/* Ensure the content fits within the available space */
+.content h2,
+.content p {
+    max-width: 100%; /* Make sure text doesn't extend beyond the content div */
+}
+
+ 
+  #section5Content,
+  #section6Content,#section7Content,
+  #section8Content,#section9Content,#section10Content,
+  #section11Content {
+    display: block; 
+    width: 100%; 
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left:250px;
+  }
+
+  .sidebar a.section {
+    /* Your existing styles */
+    position: relative; /* Establish positioning context for pseudo-elements */
+    overflow: hidden; /* Hide overflowing pseudo-elements */
+}
+
+.sidebar a.section::before,
+.sidebar a.section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50%;
+    pointer-events: none; /* Don't capture pointer events */
+    animation: glitter 2s linear infinite;
+}
+@keyframes glitter {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+    </style>
+    <title>
+            User Manual Dashboard
+    </title>
+</head>
+<body>
+    <div class="sidebar">
+        <h1><i class="fas fa-user"></i>MANUAL</h1>
+        <ul>
+            <li>
+                <a href="#" id="toggleAvatarButton">
+                    CUSTOMER AVATAR ▼
+                </a>
+                <ul id="avatarSectionList" style="display: none;">
+                    <li><a href="#" class="section" data-section="section1">KEYPAD</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="toggleConnectWalletButton">
+                    CONNECT WALLET ▼    
+                </a>
+                <ul id="connectWalletSectionList" style="display: none;">
+                    <li><a href="#" class="section" data-section="section2">METAMASK</a></li>
+                    <li><a href="#" class="section" data-section="section3">COINBASE</a></li>
+                    <li><a href="#" class="section" data-section="section4">WALLET CONNECT</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="toggleLoanProcessButton">
+                    LOAN PROCESS ▼
+                </a>
+                <ul id="loanProcessSectionList" style="display: none;">
+                    <li><a href="#" class="section" data-section="section5">APPLICATION</a></li>
+                    <li><a href="#" class="section" data-section="section6">APPROVAL</a></li>
+                    <li><a href="#" class="section" data-section="section7">DISBURSEMENT</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="toggleGoldRateButton">
+                    GOLD RATE ▼
+                </a>
+                <ul id="goldRateSectionList" style="display: none;">
+                    <li><a href="#" class="section" data-section="section8">CURRENT AND HISTORICAL DATA</a></li>
+                    <li><a href="#" class="section" data-section="section9">GOLD RATE IN OTHER STATES</a></li>
+        
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="toggleChatbotButton">
+                    CHATBOT ▼
+                </a>
+                <ul id="chatbotSectionList" style="display: none;">
+                    <li><a href="#" class="section" data-section="section10">USAGE</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="toggleReportButton">
+                    REPORT ▼
+                </a>
+                <ul id="reportSectionList" style="display: none;">
+                    <li><a href="#" class="section" data-section="section11">GENERATING REPORTS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="content">    
+            <h2><center>Welcome to the User Manual</center></h2>
+        </marquee>
+        <p><center><b>Select a section from the sidebar to view instructions.</b></center></p><br>
+        <div id="section1Content" style="display: none;">
+            <h2>KEYPAD</h2><br>
+            <p><b>MOVE AVATAR:</b></p><br>
+            <p>Use W (forward), A (left), S (back), and D (right) keys to control the Customer avatar's movement.</p> <br>
+            <p><img src="https://media.istockphoto.com/id/1179377734/vector/wasd-keys-illustration.jpg?s=612x612&w=0&k=20&c=5bWMU6FZ-pZH8cQAkOZw4kxFDH-0tvwr_i90uMTIRTM=" style="width: 200px; height: 200px;"></p><br>
+            <p><b>JUMP:</b></p><br>
+            <p>Use the spacebar to make the customer avatar jump.</p>
+            <p><img src="https://static.thenounproject.com/png/5308833-200.png" style="width: 200px; height: 200px;"></p>
+            <p><b>ADDITIONAL MOVEMENTS:</b></p><br>
+            <p>Keys can also be used for the same directional movement as W, A, S, and D.</p><br>
+            <p><img src="https://png.pngtree.com/png-vector/20220218/ourmid/pngtree-pc-keyboard-arrow-keys-black-vector-icon-concept-set-sign-vector-png-image_44520952.jpg" style="width: 200px; height: 200px;"></p><br>
+            <p><b>LEAVE INTERFACE:</b></p><br>
+            <p>Press the Escape key to exit or leave the user interface.</p><br>
+            <p><img src="https://t3.ftcdn.net/jpg/05/23/19/94/360_F_523199441_YSazyPTYcengClVGRNFU2rDLBfX0fDzJ.jpg" style="width: 200px; height: 200px;"></p><br>
+           
+        </div>
+        
+        <div id="section2Content" style="display: none;">
+            <h2>METAMASK</h2>
+            <p><b>STEP 1:</b></p>
+            <p>Go to the Chrome Web Store or Firefox Add-ons website and search for "MetaMask". Click on the "Add to Chrome" or "Add to Firefox" button to install the extension.</p>
+            <p><img src="https://bitflyer.com/a/ee12a15f47c55ed6943afd259157b92b.png" style="width: 300px; height: 200px;"></p><br>
+        
+            <p><b>STEP 2: Create a new MetaMask wallet or import an existing one:</b></p>
+            <p>Once you have installed the MetaMask extension, you will need to create a new wallet or import an existing one. To create a new wallet, click on the "Create a New Wallet" button and follow the on-screen instructions.</p>
+            <p>To import an existing wallet, click on the "Import Wallet" button and enter your secret recovery phrase.</p><br>
+            <p><img src="https://support.ledger.com/hc/article_attachments/6375100778141/MM_IMPORT.png" style="width: 400px; height: 500px;"></p><br>
+        
+            <p><b>STEP 3: Fund your wallet with ETH or other supported cryptocurrencies:</b></p>
+            <p>To fund your MetaMask wallet, you can either buy ETH directly through the MetaMask interface or send ETH from another wallet to your MetaMask address. To buy ETH directly through MetaMask, click on the "Buy ETH" button and select your preferred payment method. To send ETH from another wallet to your MetaMask address, copy your MetaMask address from the "Accounts" tab and send ETH to that address.</p><br>
+            <p><img src="https://image.binance.vision/editor-uploads-original/74544042daaa49dab2ca52a07df1994c.png" style="width: 400px; height: 500px;"></p><br>
+        
+            <p><b>STEP 4: Connect your MetaMask wallet to a dapp or DeFi protocol:</b></p>
+            <p>To connect your MetaMask wallet to a dapp or DeFi protocol, simply click on the "Connect Wallet" button on the dapp or DeFi protocol's website. You will then be prompted to select your MetaMask wallet.</p><br>
+            <p><img src="https://miro.medium.com/v2/resize:fit:1400/1*aIUgc6Nb5-EveS6VtpCwaA.png" style="width: 600px; height: 500px;"></p><br>
+        
+            <p><b>STEP 5 Transact with cryptocurrencies or interact with smart contracts:</b></p>
+            <p>Once your MetaMask wallet is connected to a dapp or DeFi protocol, you can start transacting with cryptocurrencies or interacting with smart contracts. For example, you can buy and sell NFTs, stake tokens, or borrow and lend cryptocurrencies.</p><br>
+            <p><img src="https://images.contentstack.io/v3/assets/blt38dd155f8beb7337/blt7b99f7fcb4d340db/62b328d544e495573d564d94/plasma-bridge-step-4.png" style="width: 400px; height: 500px;"></p>
+        </div>
+        
+        <div id="section3Content" style="display: none;">
+            <h2>COINBASE</h2>
+            <p><b>STEP 1: Create a Coinbase account:</b></p>
+            <p>To create a Coinbase account, visit the Coinbase website and click on the "Sign Up" button. You will need to provide your name, email address, and password. You will also need to verify your email address and phone number.</p><br>
+            <p><img src="https://blog.dingtone.me/wp-content/uploads/2021/06/create-a-coinbase-account-without-phone-number-2.jpg" style="width: 600px; height: 500px;"></p><br>
+        
+            <p><b>STEP 2: Fund your Coinbase account with fiat currency or cryptocurrency:</b></p>
+            <p>You can fund your Coinbase account with fiat currency (such as USD or EUR) or cryptocurrency. To fund your account with fiat currency, click on the "Add Funds" button and select your desired payment method. To fund your account with cryptocurrency, click on the "Deposit" button and select the cryptocurrency you want to deposit.</p><br>
+            <p><img src="https://support.bitpay.com/hc/article_attachments/360074497991/image7.png" style="width: 600px; height: 500px;"></p><br>
+        
+            <p><b>STEP 3: Buy, sell, or trade cryptocurrencies:</b></p>
+            <p>To buy, sell, or trade cryptocurrencies, click on the "Trade" tab. You will then be able to select the cryptocurrency you want to buy, sell, or trade, and specify the amount you want to buy, sell, or trade.</p><br>
+            <p><img src="https://images.ctfassets.net/7ca8qfn907uv/7CPFF2BNwvPHM64v3u2Vfo/42108134b2b31a915a1ac710f01e8c4f/Tradable_assets.png" style="width: 600px; height: 500px;"></p><br>
+        
+            <p><b>STEP 4: Withdraw cryptocurrencies from your Coinbase wallet to an external wallet:</b></p>
+            <p>To withdraw cryptocurrencies from your Coinbase wallet to an external wallet, click on the "Withdraw" button and select the cryptocurrency you want to withdraw. You will then need to enter the address of your external wallet.</p><br>
+            <p><img src="https://www.alphr.com/wp-content/uploads/2022/01/Coinbase-how-to-withdraw-to-bank-7.png" style="width: 600px; height: 500px;"></p><br><br>
+        
+            <p><b>STEP 5: Accept cryptocurrency payments on your website using Coinbase Commerce:</b></p>
+            <p>To accept cryptocurrency payments on your website using Coinbase Commerce, simply create a Coinbase Commerce account and add a Coinbase Commerce button to your website. When customers click on the Coinbase Commerce button, they will be able to pay for their purchase using cryptocurrency.</p><br>
+            <p><img src="https://woocommerce.com/wp-content/uploads/2022/10/Frame-2.png?w=620" style="width: 600px; height: 500px;"></p>
+        </div>
+        
+        <div id="section4Content" style="display: none;">
+            <h2>WALLET CONNECT</h2>
+            <p><b>STEP 1: Click on the "Wallet Connect" button:</b></p>
+
+            <p>Once you are on the dapp or DeFi protocol's website, you should see a "Connect Wallet" button. Click on this button to start the connection process.</p><br>
+            <p> <img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48297647085/original/y3Y9iZ4iIOcyaH6LL_vv1TQNrtWwK6sbEA.png?1684190744" style="width: 400px; height: 500px;"></p><br>
+
+            <p><b>STEP 2: Select your wallet from the list of supported wallets:</b></p>
+
+            <p>A list of supported wallets will appear. Select your wallet from the list.</p><br>
+            <p> <img src="https://docs.cloud.coinbase.com/assets/images/web3-react_custom_modal-069eb5e20d4cd94cec7ab63479d54be2.png"style="width: 400px; height: 500px;"></p><br>
+            <p><b>STEP 3: Approve the connection request:</p></b>
+
+            <p>You will then be prompted to approve the connection request. This will allow the dapp or DeFi protocol to access your wallet.
+
+            <p>Once you have approved the connection request, your wallet will be connected to the dapp or DeFi protocol. You can then start interacting with the dapp or DeFi protocol using your wallet.</p><br>
+            <p> <img src= "https://i.stack.imgur.com/SOGDV.png" style="width: 400px; height: 500px;"></p><br>
+        </div>
+    </div>
+        <div id="section5Content" style="display: none;">
+            <h2>APPLICATION</h2><br>
+            <p><b>STEP 1 Customer Arrival:</b></p>
+            <p>The customer arrives at the loan advisory room and approaches the digital TV.</p><br>
+
+          <p><b>STEP 2 Loan Application Form:</b></p> 
+          <p>Using the digital frame, the customer starts the loan application process by selecting the type of loan they want to apply for.</p><br>
+
+          <p><b>STEP 3 Questionnaire:</b></p>
+          <p>Digital frame displays a series of questions related to the chosen loan type.</p>
+          <p>The customer provides answers to these questions, which may include personal information, financial details, and the purpose of the loan.</p><br>
+
+          <p><b>STEP 4 Review and Submission:</b></p> 
+          <p>Filling out the questionnaire, the customer reviews the information they've provided to ensure accuracy.</p>
+          <p>Once satisfied, they submit the loan application through the digital frame interface.</p><br>
+
+          <p><b>STEP 5 Confirmation: </b></p>
+          <p>The system confirms the successful submission of the loan application, and the customer receives an acknowledgment or reference number for tracking their progress</p><br>
+          
+        </div>
+        <div id="section6Content" style="display: none;">
+            <h2>APPROVAL</h2><br>
+          <p><b>STEP 1 Input Information:</b></p>
+          <p>Following the successful submission of a loan application As a security step, the customer navigates to another page that contains a verification button.</p>
+          <p>When they click it, it begins by providing a unique ID and records their face using a camera or facial recognition technology.</p><br>
+          <p><b>STEP 2 Face Verification:</b></p>
+          <p>The system verifies the customer's face to ensure identity authentication. Once the face is successfully verified, the customer proceeds by clicking the "Open Next" button.</p><br>
+          <p><b>STEP 3 Document Verification: </b></p>
+  <p>Clicking the "Open Next" button directs the user to the next phase, which is document verification.</p><br>
+  <p> In this step, the customer submits necessary documents and information required for the loan application.</p><br>
+        </div>
+        <div id="section7Content" style="display: none;">
+            <h2>DISBURSEMENT</h2><br>
+          <p><b>1. Login and Access Dashboard:</b> 
+            <p>The employee logs into the employment dashboard, where they are presented with various options. They select "Loan Status" from the menu.</p><br>
+
+  <P><b>2. Verify and Approve Loan:</b></P>
+  <p>Within the "Loan Status" section, the employee checks the loan status of the customer.</p>
+  <p>If the status is verified, and if required, the employee uses a "Connect Wallet" feature to facilitate the loan approval and disbursement to the customer.</p><br>
+        </div>
+        <div id="section8Content" style="display: none;">
+            <h2>CURRENT AND HISTORICAL DATA</h2><br>
+            <p><b>STEP 1</b></p>
+            <p>As the customer interacts with the graph by moving the cursor, the system responds by displaying both current and historical data for gold, silver, and platinum prices. </p><br>
+            <p><b>STEP 2</b></p>
+              <p>By hovering over a specific metal with the cursor, the customer can easily select that metal's data and receive detailed information about its current and past performance.</p>
+        </div>
+        <div id="section9Content" style="display: none;">
+            <h2>GOLD RATE IN OTHER STATES</h2><br>
+            <p>By clicking on 'Gold Rate in Other States', customers can access information about gold prices in different states,providing them with a broader perspective on gold rates</p>
+        </div>
+        <div id="section10Content" style="display: none;">
+            <h2>USAGE</h2><br>
+            <p>Clicking the small boy logo in the lower-right corner opens a chatbot, offering customers the ability to address their initial inquiries and get assistance.</p><br>
+            <p><img src= "https://img.freepik.com/free-vector/cute-bot-say-users-hello-chatbot-greets-online-consultation_80328-195.jpg?size=626&ext=jpg" style="width: 200px; height: 300px;"></p><br> 
+        </div>
+        <div id="section11Content" style="display: none;">
+            <h2>GENERATING REPORTS</h2><br>
+            <p><b>STEP 1:</b></p>
+            <p>To report an issue or query as a customer, visit the manager's office and approach the digital frame.</p><br>
+            <p><b>STEP 2:</b></p>
+            <p>Once near the digital frame, a user interface will open, allowing you to input your primary details, including your name and phone number, and then type out your query or concern.</p>
+        </div>
+    </div>
+    <script>
+         const toggleAvatarButton = document.getElementById("toggleAvatarButton");
+        const toggleConnectWalletButton = document.getElementById("toggleConnectWalletButton");
+        const connectWalletSectionList = document.getElementById("connectWalletSectionList");
+        const toggleLoanProcessButton = document.getElementById("toggleLoanProcessButton");
+        const loanProcessSectionList = document.getElementById("loanProcessSectionList");
+        const toggleGoldRateButton = document.getElementById("toggleGoldRateButton");
+        const goldRateSectionList = document.getElementById("goldRateSectionList");
+        const toggleChatbotButton = document.getElementById("toggleChatbotButton");
+        const chatbotSectionList = document.getElementById("chatbotSectionList");
+        const toggleReportButton = document.getElementById("toggleReportButton");
+        const reportSectionList = document.getElementById("reportSectionList");
+        const sectionLinks = document.querySelectorAll(".section");
+        const section1Content = document.getElementById("section1Content");
+        const section2Content = document.getElementById("section2Content");
+        const section3Content = document.getElementById("section3Content");
+        const section4Content = document.getElementById("section4Content");
+        const section5Content = document.getElementById("section5Content");
+        const section6Content = document.getElementById("section6Content");
+        const section7Content = document.getElementById("section7Content");
+        const section8Content = document.getElementById("section8Content");
+        const section9Content = document.getElementById("section9Content");
+        const section10Content = document.getElementById("section10Content");
+        const section11Content = document.getElementById("section11Content");
+        
+        let avatarSectionsVisible = false;
+        let connectWalletSectionsVisible = false;
+        let loanProcessSectionsVisible = false;
+        let goldRateSectionsVisible = false;
+        let chatbotSectionsVisible = false;
+        let reportSectionsVisible = false;
+
+        toggleAvatarButton.addEventListener("click", function () {
+            avatarSectionsVisible = !avatarSectionsVisible;
+            avatarSectionList.style.display = avatarSectionsVisible ? "block" : "none";
+            toggleAvatarButton.textContent = `CUSTOMER AVATAR ${avatarSectionsVisible ? "▶" : "▼"}`;
+        });
+
+        toggleConnectWalletButton.addEventListener("click", function () {
+            connectWalletSectionsVisible = !connectWalletSectionsVisible;
+            connectWalletSectionList.style.display = connectWalletSectionsVisible ? "block" : "none";
+            toggleConnectWalletButton.textContent = `CONNECT WALLET ${connectWalletSectionsVisible ? "▶" : "▼"}`;
+        });
+
+        toggleLoanProcessButton.addEventListener("click", function () {
+            loanProcessSectionsVisible = !loanProcessSectionsVisible;
+            loanProcessSectionList.style.display = loanProcessSectionsVisible ? "block" : "none";
+            toggleLoanProcessButton.textContent = `LOAN PROCESS ${loanProcessSectionsVisible ? "▶" : "▼"}`;
+        });
+
+        toggleGoldRateButton.addEventListener("click", function () {
+            goldRateSectionsVisible = !goldRateSectionsVisible;
+            goldRateSectionList.style.display = goldRateSectionsVisible ? "block" : "none";
+            toggleGoldRateButton.textContent = `GOLD RATE ${goldRateSectionsVisible ? "▶" : "▼"}`;
+        });
+
+        toggleChatbotButton.addEventListener("click", function () {
+            chatbotSectionsVisible = !chatbotSectionsVisible;
+            chatbotSectionList.style.display = chatbotSectionsVisible ? "block" : "none";
+            toggleChatbotButton.textContent = `CHATBOT ${chatbotSectionsVisible ? "▶" : "▼"}`;
+        });
+
+        toggleReportButton.addEventListener("click", function () {
+            reportSectionsVisible = !reportSectionsVisible;
+            reportSectionList.style.display = reportSectionsVisible ? "block" : "none";
+            toggleReportButton.textContent = `REPORT ${reportSectionsVisible ? "▶" : "▼"}`;
+        });
+
+        sectionLinks.forEach(sectionLink => {
+            sectionLink.addEventListener("click", function () {
+                const sectionId = this.getAttribute("data-section");
+                section1Content.style.display = "none";
+                section2Content.style.display = "none";
+                section3Content.style.display = "none";
+                section4Content.style.display = "none";
+                section5Content.style.display = "none";
+                section6Content.style.display = "none";
+                section7Content.style.display = "none";
+                section8Content.style.display = "none";
+                section9Content.style.display = "none";
+                section10Content.style.display = "none";
+                section11Content.style.display = "none";
+                if (sectionId === "section1") {
+                    section1Content.style.display = "block";
+                } else if (sectionId === "section2") {
+                    section2Content.style.display = "block";
+                } else if (sectionId === "section3") {
+                    section3Content.style.display = "block";
+                } else if (sectionId === "section4") {
+                    section4Content.style.display = "block";
+                } else if (sectionId === "section5") {
+                    section5Content.style.display = "block";
+                } else if (sectionId === "section6") {
+                    section6Content.style.display = "block";
+                } else if (sectionId === "section7") {
+                    section7Content.style.display = "block";
+                } else if (sectionId === "section8") {
+                    section8Content.style.display = "block";
+                } else if (sectionId === "section9") {
+                    section9Content.style.display = "block";
+                }  else if (sectionId === "section10") {
+                    section10Content.style.display = "block";
+                }  else if (sectionId == "section11") {
+                    section11Content.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
